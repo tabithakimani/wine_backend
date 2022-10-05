@@ -22,5 +22,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
 
 Route::group(['namespace' => 'App\Http\Controllers\Api'], function () {
     Route::resource('/products', 'ProductController');
+    Route::get('/tags', 'ProductController@tags');
     Route::resource('/uoms', 'UnitOfMeasureController');
 });

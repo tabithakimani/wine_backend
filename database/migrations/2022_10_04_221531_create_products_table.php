@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('class')->nullable();
             $table->string('quality')->nullable();
+            $table->longText('details')->nullable();
             $table->timestamps();
         });
     }

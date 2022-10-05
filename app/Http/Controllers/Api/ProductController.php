@@ -24,6 +24,17 @@ class ProductController extends Controller
         ], Response::HTTP_OK);
     }
 
+    public function tags(Request $request){
+        $tags = Product::select('class')
+            ->groupBy('class')
+            ->get();
+
+        return response()->json([
+            'data' => $tags,
+            'message' => 'Fetched successfully'
+        ], Response::HTTP_OK);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

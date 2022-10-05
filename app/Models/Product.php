@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'image', 'class', 'quality'];
+    protected $fillable = ['name', 'image', 'class', 'quality','details'];
 
 
     public function unit_of_measures(){

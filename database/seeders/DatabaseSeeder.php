@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Log;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Log::info('start');
         \DB::table('products')->insert(array (
             0 =>
                 array (
@@ -314,5 +316,6 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => '2021-12-01 12:34:15',
                 ),
         ));
+        Log::info('end');
     }
 }

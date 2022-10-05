@@ -16,7 +16,7 @@ class RegisterController extends Controller
         return Validator::make($request->all(), [
             'full_name' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
         ]);
 
     }
@@ -33,14 +33,16 @@ class RegisterController extends Controller
 
             $user = User::create([
                 'full_name' => $request['full_name'],
-                'phone_number' => $request['phone'],
+                'phone_number' => $request['phone_number'],
                 'password' => Hash::make($request['password']),
             ]);
+            $token = $user->createToken('citadel')->accessToken;
 
             return response()->json(
                 [
                     'message' => 'user added successfully',
-                    'applicant' => $user,
+                    'user' => $user,
+                    'token' => $token
 
                 ], Response::HTTP_CREATED);
 

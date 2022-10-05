@@ -26,7 +26,7 @@ class LoginController extends Controller
             );
         } else {
 
-            $user = User::where('phone', $request->input('phone_number'))->first();
+            $user = User::where('phone_number', $request->input('phone_number'))->first();
 
             if ($user) {
                 if (Hash::check($request->password, $user->password)) {

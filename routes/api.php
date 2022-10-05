@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
     Route::post('/login', 'LoginController@login');
     Route::post('/register', 'RegisterController@register');
+    Route::post('/logout', 'LoginController@logout');
 });
 
 Route::group(['namespace' => 'App\Http\Controllers\Api'], function () {

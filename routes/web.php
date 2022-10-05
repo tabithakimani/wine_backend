@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::fallback('FrontendController@show');
+Route::fallback('App\Http\Controllers\FrontendController@show');

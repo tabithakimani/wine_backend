@@ -14,8 +14,6 @@ class UnitOfMeasureTableSeeder extends Seeder
      */
     public function run()
     {
-//        'name','quantity','price','product_id'
-        \DB::table('unit_of_measures')->delete();
 
         \DB::table('unit_of_measures')->insert(array (
             0 =>

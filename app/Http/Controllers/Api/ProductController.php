@@ -16,8 +16,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $products = Product::with('unit_of_measures')->FilterBy($request->all())
-        ->orderBy($request['sort_by'] ?? 'id', 'DESC');
+        $products = Product::with('unit_of_measures')->FilterBy($request->all());
 
         return response()->json([
             'data' => $this->parseQuery($products,$request),

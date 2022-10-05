@@ -21,8 +21,14 @@ class Product extends Model
         $q->when(isset($filters['search']), function ($q) use ($filters) {
 
             $q->where('name', 'LIKE', '%' . $filters['search'] . '%');
-        })->when(isset($filters['class']) && count($filters['class']), function ($q) use ($filters) {
-            $q->whereIn('class', $filters['class']);
+        })->when(isset($filters['tag']), function ($q) use ($filters) {
+            $q->where('class', $filters['tag']);
+        })->when(isset($filters['sort_by']) && $filters['sort_by'] == 'price', function ($q) use ($filters) {
+            $q->whereHas('unit_of_measures', function ($q) use ($filters) {
+               $q->orderBy('price','ASC');
+            });
+        })->when(isset($filters['sort_by']) && $filters['sort_by'] == 'quality', function ($q) use ($filters) {
+            $q->orderBy('quality','DESC');
         });
 
     }

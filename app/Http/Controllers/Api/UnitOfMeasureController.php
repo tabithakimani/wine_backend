@@ -16,7 +16,7 @@ class UnitOfMeasureController extends Controller
      */
     public function index(Request $request)
     {
-        $uom = UnitOfMeasure::query();
+        $uom = UnitOfMeasure::where('product_id',$request['id']);
 
         return response()->json(
             [

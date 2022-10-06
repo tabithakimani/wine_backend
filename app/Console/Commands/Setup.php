@@ -30,6 +30,8 @@ class Setup extends Command
     public function handle()
     {
         Log::info('start');
+        DB::table('products')->delete();
+        DB::table('unit_of_measures')->delete();
         \DB::table('products')->insert(array (
             0 =>
                 array (

@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class Setup extends Command
@@ -332,7 +333,7 @@ class Setup extends Command
                 array (
                     'created_at' => '2021-12-01 12:34:15',
                     'deleted_at' => NULL,
-                    'id' => 15,
+                    'id' => 17,
                     'name' => 'Case',
                     'quantity' => 0,
                     'price' => 630.0,
@@ -343,7 +344,7 @@ class Setup extends Command
                 array (
                     'created_at' => '2021-12-01 12:34:15',
                     'deleted_at' => NULL,
-                    'id' => 16,
+                    'id' => 18,
                     'quantity' => 0,
                     'name' => 'Bottle',
                     'price' => 56.5,

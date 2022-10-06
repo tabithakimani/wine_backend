@@ -24,4 +24,8 @@ Route::group(['namespace' => 'App\Http\Controllers\Api'], function () {
     Route::resource('/products', 'ProductController');
     Route::get('/tags', 'ProductController@tags');
     Route::resource('/uoms', 'UnitOfMeasureController');
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::resource('/orders', 'OrderController');
+    });
 });
+

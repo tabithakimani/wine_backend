@@ -43,14 +43,14 @@ class LoginController extends Controller
                     return response()->json(
                         [
                             'message' => 'Credentials Provided are Incorrect'
-                        ], Response::HTTP_NOT_FOUND
+                        ], Response::HTTP_UNAUTHORIZED
                     );
                 }
             } else {
                 return response()->json(
                     [
                         'message' => 'Credentials Provided are Incorrect'
-                    ], Response::HTTP_NOT_FOUND
+                    ], Response::HTTP_UNAUTHORIZED
                 );
             }
         }

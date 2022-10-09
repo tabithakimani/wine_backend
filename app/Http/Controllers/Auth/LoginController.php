@@ -43,14 +43,14 @@ class LoginController extends Controller
                     return response()->json(
                         [
                             'message' => 'Credentials Provided are Incorrect'
-                        ], Response::HTTP_UNAUTHORIZED
+                        ], Response::HTTP_FORBIDDEN
                     );
                 }
             } else {
                 return response()->json(
                     [
                         'message' => 'Credentials Provided are Incorrect'
-                    ], Response::HTTP_UNAUTHORIZED
+                    ], Response::HTTP_FORBIDDEN
                 );
             }
         }
